@@ -136,7 +136,7 @@
     		"</div>" +
     		"</div>";
 		
-		var infowindow = new google.maps.InfoWindow({
+		var  infowindow = new google.maps.InfoWindow({
     		content: contentString,
   		});
 		
@@ -151,7 +151,7 @@
   			default:
     			Image = imageBuca;
 			}
-      const marker =  new google.maps.Marker({
+      var marker =  new google.maps.Marker({
             position: { lat: beach[1], lng: beach[2] },
             	map,
 	 	icon: Image,
@@ -167,8 +167,8 @@
         }
       }
 	    
-    //window.onload = loadScript;
-    window.onload = loadScriptDev;
+    window.onload = loadScript;
+    //window.onload = loadScriptDev;
     </script>
   </head>
   <body>
