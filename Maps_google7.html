@@ -62,6 +62,12 @@
           zoom: 10,
           center: { lat: -33.9, lng: 151.2 },
         });
+	
+	  const marker = new google.maps.Marker({
+          position: { lat: -33.9, lng: 151.2 },
+          map: map,
+        });
+	      
         setMarkers(map);
       }
       // Data for the markers consisting of a name, a LatLng and a zIndex for the
