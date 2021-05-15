@@ -129,14 +129,14 @@
 		 var contentString =
     		'<div id="content">' +
     		'<div id="siteNotice">' +
-    		"</div>" +
+    		'</div>' +
     		'<h1 id="firstHeading" class="firstHeading">' + beach[4] + '</h1>' +
     		'<div id="bodyContent">' +
-    		"<p><b>' + beach[4] + '</b>, Bodega de Despacho .</p>" +
-    		"</div>" +
-    		"</div>";
+    		'<p><b>' + beach[4] + '</b>, Bodega de Despacho .</p>' +
+    		'</div>' +
+    		'</div>';
 		
-		var  infowindow = new google.maps.InfoWindow({
+		const  infowindow = new google.maps.InfoWindow({
     		content: contentString,
   		});
 		
@@ -151,7 +151,7 @@
   			default:
     			Image = imageBuca;
 			}
-      var marker =  new google.maps.Marker({
+      const marker =  new google.maps.Marker({
             position: { lat: beach[1], lng: beach[2] },
             	map,
 	 	icon: Image,
@@ -167,8 +167,8 @@
         }
       }
 	    
-    window.onload = loadScript;
-    //window.onload = loadScriptDev;
+    //window.onload = loadScript;
+    window.onload = loadScriptDev;
     </script>
   </head>
   <body>
