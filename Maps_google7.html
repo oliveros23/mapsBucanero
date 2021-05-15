@@ -37,9 +37,13 @@
        }
       
       function initMap() {
+        
+        const latitud = parseFloat(getQueryVariable("lat"));
+        const longitud = parseFloat(getQueryVariable("lng"));
+        
         const map = new google.maps.Map(document.getElementById("map"), {
           zoom: 14,
-          center: { lat: 10.373435493948676, lng: -75.44044115990985 },
+          center: { lat: latitud, lng: longitud },
         });
         // Create an array of alphabetical characters used to label the markers.
         const labels = "ABCDEFG";
@@ -54,14 +58,13 @@
           });
         });
         // Add a marker clusterer to manage the markers.
-        new MarkerClusterer(map, markers, {
-          imagePath:
-            "https://icons.iconarchive.com/icons/dryicons/aesthetica-2/24/attachment-icon.png",
-        });
+        // new MarkerClusterer(map, markers, {
+        //  imagePath:
+        //    "https://icons.iconarchive.com/icons/dryicons/aesthetica-2/24/attachment-icon.png",
+        // });
       }
       
-      const latitud = getQueryVariable("lat");
-      const longitud = getQueryVariable("lng");
+    
       
       const locations = [
         { lat: 10.373435493948676, lng: -75.44044115990985 },
@@ -69,7 +72,7 @@
         { lat: 10.390435493948676, lng: -75.42044115990985 },
         { lat: 10.350435493948676, lng: -75.42844115990985 },
         { lat: 10.369435493948676, lng: -75.43144115990985 },
-        { lat: parseFloat(latitud), lng: parseFloat(longitud) },
+        { lat: latitud, lng:  longitud },
       ];
       
  
