@@ -67,7 +67,8 @@
         // direction to the right and in the Y direction down.
         const image = {
           url:
-            "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+		"https://oliveros23.github.io/mapsBucanero/Logos-01.png",
+           // "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
           // This marker is 20 pixels wide by 32 pixels high.
           size: new google.maps.Size(20, 32),
           // The origin for this image is (0, 0).
@@ -102,7 +103,9 @@
 
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4CjP9n06Bi-xx0lw3WUuwjdh6ooTjzhQ&callback=initMap&libraries=&v=weekly"
+	const urlkey = concat("https://maps.googleapis.com/maps/api/js?key=", getQueryVariable("key"),"&callback=initMap&libraries=&v=weekly");
+	src= urlkey
+      //src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4CjP9n06Bi-xx0lw3WUuwjdh6ooTjzhQ&callback=initMap&libraries=&v=weekly"
       // src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4CjP9n06Bi-xx0lw3WUuwjdh6ooTjzhQ&callback=initMap&libraries=&v=weekly"
       async
     ></script>
