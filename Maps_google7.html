@@ -43,11 +43,12 @@
        const UrlKey = "https://maps.googleapis.com/maps/api/js?key="+ Key +"&libraries=&v=weekly";
 	    
 	 function loadScript() {
-    	var script = document.createElement('script');
-    	script.type = 'text/javascript';
-    	script.src = UrlKey;
-    	document.body.appendChild(script);
-	}
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://maps.googleapis.com/maps/api/js?v=3' +
+            '&signed_in=true&callback=initMap';
+        document.body.appendChild(script);
+    }
 	    
        
       // The following example creates complex markers to indicate beaches near
@@ -117,6 +118,9 @@
     <div id="map"></div>
 
     <!-- Async script executes immediately and must be after any DOM elements used in callback. //src="https://maps.googleapis.com/maps/api/js?key="+ UrlKey +"&callback=initMap&libraries=&v=weekly" -->
-
+    <script
+      src=UrlKey
+      async
+    ></script>
   </body>
 </html>
