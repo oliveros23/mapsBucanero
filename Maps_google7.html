@@ -33,16 +33,13 @@
           }
          return false;
        }
-
-
 	    
         //const latitud = getQueryVariable("lat");
 	//const longitud = getQueryVariable("lng");
 	//parseFloat(latitud)
        const Key =  getQueryVariable("key");
-       //const UrlKey = "https://maps.googleapis.com/maps/api/js?key="+ Key +"&libraries=&v=weekly";
 	    
-	 function loadScript() {
+	   function loadScript() {
         var script = document.createElement('script');
         script.type = 'text/javascript';
         script.src = 'https://maps.googleapis.com/maps/api/js?key='+ Key +'&libraries=&v=weekly&callback=initMap';
@@ -117,13 +114,11 @@
         }
       }
 	    
-    window.onload = loadScript;
+    //window.onload = loadScript;
+    window.onload = loadScriptDev;
     </script>
   </head>
   <body>
     <div id="map"></div>
-
-    <!-- Async script executes immediately and must be after any DOM elements used in callback. //src="https://maps.googleapis.com/maps/api/js?key="+ UrlKey +"&callback=initMap&libraries=&v=weekly" -->
-
   </body>
 </html>
