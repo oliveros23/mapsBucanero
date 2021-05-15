@@ -86,18 +86,18 @@
     </script>
   </head>
   <body>
-    <div id="map"></div>
     <div>
-    <button type="button" onclick="alert(getQueryVariable('sessionid'));">
+      <button type="button" onclick="alert(getQueryVariable('sessionid'));">
         sessionid
-    </button>
-    <button type="button" onclick="alert(getQueryVariable('xyz'));">
+      </button>
+      <button type="button" onclick="alert(getQueryVariable('xyz'));">
         xyz
-    </button>
-    <button type="button" onclick="alert(getQueryVariable('product_id'));">
+      </button>
+      <button type="button" onclick="alert(getQueryVariable('product_id'));">
         product_id 
-    </button>
-</div>
+      </button>
+    </div>
+    <div id="map"></div>
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4CjP9n06Bi-xx0lw3WUuwjdh6ooTjzhQ&callback=initMap&libraries=&v=weekly"
