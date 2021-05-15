@@ -21,6 +21,21 @@
       }
     </style>
     <script>
+      
+       function getQueryVariable(variable) {
+        // Estoy asumiendo que query es window.location.search.substring(1);
+        //var query = "product_id=32&cat_id=1&sessionid=123";
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0; i < vars.length; i++) {
+            var pair = vars[i].split("="); 
+            if (pair[0] == variable) {
+                return pair[1];
+             }
+          }
+         return false;
+       }
+      
       function initMap() {
         const map = new google.maps.Map(document.getElementById("map"), {
           zoom: 14,
@@ -44,28 +59,20 @@
             "https://icons.iconarchive.com/icons/dryicons/aesthetica-2/24/attachment-icon.png",
         });
       }
+      
+      const latitud = getQueryVariable("lat");
+      const longitud = getQueryVariable("lng");
+      
       const locations = [
         { lat: 10.373435493948676, lng: -75.44044115990985 },
         { lat: 10.381435493948676, lng: -75.43544115990985 },
         { lat: 10.390435493948676, lng: -75.42044115990985 },
         { lat: 10.350435493948676, lng: -75.42844115990985 },
         { lat: 10.369435493948676, lng: -75.43144115990985 },
-        { lat: getQueryVariable("lat"), lng: getQueryVariable("lng") },
+        { lat: latitud, lng: longitud },
       ];
       
-      function getQueryVariable(variable) {
-        // Estoy asumiendo que query es window.location.search.substring(1);
-        //var query = "product_id=32&cat_id=1&sessionid=123";
-        var query = window.location.search.substring(1);
-        var vars = query.split("&");
-        for (var i=0; i < vars.length; i++) {
-            var pair = vars[i].split("="); 
-            if (pair[0] == variable) {
-                return pair[1];
-            }
-        }
-        return false;
-    }
+ 
     </script>
   </head>
   <body>
