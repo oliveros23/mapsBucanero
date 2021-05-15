@@ -119,15 +119,15 @@
           const beach = beaches[i];
 	 	var Image;
 		switch(beach[4]) {
-  		case "Bucanero":
-    		Image = imageBuca;
-    		break;
-  		case "Campollo":
-    		Image = imageCamp;
-    		break;
-  		default:
-    		Image = imageBuca;
-		},
+  			case "Bucanero":
+    			Image = imageBuca;
+    			break;
+  			case "Campollo":
+    			Image = imageCamp;
+    			break;
+  			default:
+    			Image = imageBuca;
+			}
           new google.maps.Marker({
             position: { lat: beach[1], lng: beach[2] },
             	map,
