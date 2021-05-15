@@ -117,22 +117,24 @@
 
         for (let i = 0; i < beaches.length; i++) {
           const beach = beaches[i];
-          new google.maps.Marker({
-            position: { lat: beach[1], lng: beach[2] },
-            map,
-	 	switch(beach[4]) {
+	 	var Image;
+		switch(beach[4]) {
   		case "Bucanero":
-    		icon: imageBuca
+    		Image = imageBuca;
     		break;
   		case "Campollo":
-    		icon: imageCamp
+    		Image = imageCamp;
     		break;
   		default:
-    		icon: imageBuca
+    		Image = imageBuca;
 		},
-             shape: shape,
-            title: beach[0],
-            zIndex: beach[3],
+          new google.maps.Marker({
+            position: { lat: beach[1], lng: beach[2] },
+            	map,
+	 	icon: Image,
+             	shape: shape,
+            	title: beach[0],
+            	zIndex: beach[3],
           });
         }
       }
