@@ -36,11 +36,11 @@
          return false;
        }
       
-        const latitud = getQueryVariable("lat");
-        const longitud = getQueryVariable("lng");
+        
       
       function initMap() {
-        
+        const latitud = getQueryVariable("lat");
+        const longitud = getQueryVariable("lng");
         const map = new google.maps.Map(document.getElementById("map"), {
           zoom: 14,
           center: { lat: parseFloat(latitud), lng: parseFloat(longitud) },
@@ -65,7 +65,8 @@
       }
       
     
-      
+      const latitud = getQueryVariable("lat");
+      const longitud = getQueryVariable("lng");
       const locations = [
         { lat: 10.373435493948676, lng: -75.44044115990985 },
         { lat: 10.381435493948676, lng: -75.43544115990985 },
