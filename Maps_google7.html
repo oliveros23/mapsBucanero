@@ -37,7 +37,8 @@
         //const latitud = getQueryVariable("lat");
 	//const longitud = getQueryVariable("lng");
 	//parseFloat(latitud)
-       const UrlKey =  getQueryVariable("key");
+       const Key =  getQueryVariable("key");
+       const UrlKey = "https://maps.googleapis.com/maps/api/js?key="+ Key +"&libraries=&v=weekly";
        
       // The following example creates complex markers to indicate beaches near
       // Sydney, NSW, Australia. Note that the anchor is set to (0,32) to correspond
@@ -105,7 +106,7 @@
 
     <!-- Async script executes immediately and must be after any DOM elements used in callback. //src="https://maps.googleapis.com/maps/api/js?key="+ UrlKey +"&callback=initMap&libraries=&v=weekly" -->
     <script
-      src="https://maps.googleapis.com/maps/api/js?key="+ UrlKey +"&libraries=&v=weekly"
+      src=UrlKey
       async
     ></script>
   </body>
