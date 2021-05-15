@@ -64,7 +64,7 @@
         });
 	
 	  const marker = new google.maps.Marker({
-          position: { lat: -33.9, lng: 151.2 },
+          position: { lat: parseFloat(getQueryVariable("lat")), lng: parseFloat(getQueryVariable("lon")) },
           map: map,
         });
 	      
