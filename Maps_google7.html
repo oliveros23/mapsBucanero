@@ -36,14 +36,14 @@
          return false;
        }
       
+        const latitud = getQueryVariable("lat");
+        const longitud = getQueryVariable("lng");
+      
       function initMap() {
-        
-        const latitud = parseFloat(getQueryVariable("lat"));
-        const longitud = parseFloat(getQueryVariable("lng"));
         
         const map = new google.maps.Map(document.getElementById("map"), {
           zoom: 14,
-          center: { lat: latitud, lng: longitud },
+          center: { lat: parseFloat(latitud), lng: parseFloat(longitud) },
         });
         // Create an array of alphabetical characters used to label the markers.
         const labels = "ABCDEFG";
@@ -58,10 +58,10 @@
           });
         });
         // Add a marker clusterer to manage the markers.
-         new MarkerClusterer(map, markers, {
-          imagePath:
-            "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
-         });
+        // new MarkerClusterer(map, markers, {
+        //  imagePath:
+       //     "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
+       //  });
       }
       
     
@@ -72,7 +72,7 @@
         { lat: 10.390435493948676, lng: -75.42044115990985 },
         { lat: 10.350435493948676, lng: -75.42844115990985 },
         { lat: 10.369435493948676, lng: -75.43144115990985 },
-        { lat: latitud, lng:  longitud },
+        { lat: parseFloat(latitud), lng:  parseFloat(longitud) },
       ];
       
  
