@@ -79,6 +79,8 @@
         ["Manly Beach", -33.80010128657071, 151.28747820854187, 2, "Campollo"],
         ["Maroubra Beach", -33.950198, 151.259302, 1, "Bucanero"],
       ];
+	    
+	   
 
       function setMarkers(map) {
         // Adds markers to the map.
@@ -123,6 +125,21 @@
 
         for (let i = 0; i < beaches.length; i++) {
           const beach = beaches[i];
+		
+		 var contentString =
+    		'<div id="content">' +
+    		'<div id="siteNotice">' +
+    		"</div>" +
+    		'<h1 id="firstHeading" class="firstHeading">' + beach[4] + '</h1>' +
+    		'<div id="bodyContent">' +
+    		"<p><b>' + beach[4] + '</b>, Bodega de Despacho .</p>" +
+    		"</div>" +
+    		"</div>";
+		
+		var infowindow = new google.maps.InfoWindow({
+    		content: contentString,
+  		});
+		
 	 	var Image;
 		switch(beach[4]) {
   			case "Bucanero":
@@ -134,7 +151,7 @@
   			default:
     			Image = imageBuca;
 			}
-          new google.maps.Marker({
+      const marker =  new google.maps.Marker({
             position: { lat: beach[1], lng: beach[2] },
             	map,
 	 	icon: Image,
@@ -142,6 +159,11 @@
             	title: beach[0],
             	zIndex: beach[3],
           });
+		
+	marker.addListener("click", () => {
+    	infowindow.open(map, marker);
+  	});
+		
         }
       }
 	    
